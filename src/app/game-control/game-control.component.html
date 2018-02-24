@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Game Control - Odd Even</h1>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Bind It</div>
+      <div class="panel-body">
+        <h3>Numbers</h3>
+        <div *ngIf="incCount % 2 === 0">
+            <app-even-component>
+                {{incCount}}
+            </app-even-component>
+        </div>
+        <div *ngIf="incCount % 2 !== 0">
+            <app-odd-component>
+                {{incCount}}
+            </app-odd-component>
+        </div>
+      </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-xs-12">
+              <button (click)="startGame()" 
+                      class="btn btn-success"
+                      [disabled]="gameStarted"
+                      >
+                      Start Game
+              </button>
+              <button (click)="endGame()" 
+                      class="btn btn-danger"
+                      [disabled]="!gameStarted">
+                    Stop Game
+              </button>
+              <button (click)="resetGame()" 
+                      class="btn btn-primary"
+                      [disabled]="gameStarted">
+                    Reset Game
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

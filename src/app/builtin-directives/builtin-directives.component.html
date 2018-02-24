@@ -1,0 +1,14 @@
+<div>
+    <p *ngIf="displayText">
+        Secret Password = tuna
+    </p>
+  <button (click)="clickAction()">
+      Display Details
+  </button>
+  
+  <ul>
+    <li *ngFor="let value of buttonClicksArr">
+        <p [ngStyle]="{'background-color' : getStyle(value)}"> clicked {{ value }} times</p>
+    </li>
+  </ul>
+</div>
